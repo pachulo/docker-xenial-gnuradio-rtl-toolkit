@@ -47,7 +47,7 @@ RUN git clone --depth 1 https://github.com/viraptor/kalibrate-rtl && \
         make install && \
         cd
 
-# Some GUI applications need this variable set
-RUN echo QT_X11_NO_MITSHM=1 >> /etc/profile
+# Some QT-based applications need this variable set
+RUN echo QT_X11_NO_MITSHM=1 >> /etc/environment
 
 ENTRYPOINT  ["/bin/bash"]
