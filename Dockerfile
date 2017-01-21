@@ -50,4 +50,8 @@ RUN git clone --depth 1 https://github.com/viraptor/kalibrate-rtl && \
 # Some QT-based applications need this variable set
 RUN echo QT_X11_NO_MITSHM=1 >> /etc/environment
 
+# Disable LUA scripts in wireshark, as we will run it as root.
+# https://ask.wireshark.org/questions/17190/running-tshark-as-a-root-dofile-file-is-disabled-problem
+RUN sed -i -e 's/disable_lua = false/disable_lua = true/' /usr/share/wireshark/init.lua
+
 ENTRYPOINT  ["/bin/bash"]
