@@ -48,7 +48,7 @@ RUN git clone --depth 1 https://github.com/viraptor/kalibrate-rtl && \
         cd
 
 # Some QT-based applications need this variable set
-RUN echo QT_X11_NO_MITSHM=1 >> /etc/environment
+RUN echo export QT_X11_NO_MITSHM=1 >> /etc/bash.bashrc
 
 # Disable LUA scripts in wireshark, as we will run it as root.
 # https://ask.wireshark.org/questions/17190/running-tshark-as-a-root-dofile-file-is-disabled-problem
