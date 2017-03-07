@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM pachulo/docker-xenial-virtualgl-nvidia
 
 LABEL version="1.0"
 
