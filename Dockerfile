@@ -24,8 +24,7 @@ RUN apt-get update && \
         cmake libboost-all-dev libcppunit-dev swig doxygen liblog4cpp5-dev python-scipy gr-osmosdr wireshark && \
         apt-get clean && \
         apt-get autoremove && \
-        rm -rf /var/lib/apt/lists/* && \
-        cd
+        rm -rf /var/lib/apt/lists/*
 
 # We don't install these packages from the repos: rtl-sdr, librtlsdr-dev
 RUN git clone --depth 1 https://github.com/rtlsdrblog/rtl-sdr && \
@@ -35,8 +34,7 @@ RUN git clone --depth 1 https://github.com/rtlsdrblog/rtl-sdr && \
         cmake ../ -DINSTALL_UDEV_RULES=ON && \
         make && \
         make install && \
-        ldconfig && \
-        cd
+        ldconfig
 
 # This seems to be the most up to date fork
 RUN git clone --depth 1 https://github.com/viraptor/kalibrate-rtl && \
@@ -44,8 +42,7 @@ RUN git clone --depth 1 https://github.com/viraptor/kalibrate-rtl && \
         ./bootstrap && CXXFLAGS='-W -Wall -O3' && \
         ./configure && \
         make && \
-        make install && \
-        cd
+        make install
 
 # Some QT-based applications need this variable set
 RUN echo export QT_X11_NO_MITSHM=1 >> /etc/bash.bashrc
