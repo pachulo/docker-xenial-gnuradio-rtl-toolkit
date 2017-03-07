@@ -1,4 +1,4 @@
-FROM pachulo/docker-xenial-virtualgl-nvidia
+FROM pachulo/xenial-virtualgl-nvidia
 
 LABEL version="1.0"
 
