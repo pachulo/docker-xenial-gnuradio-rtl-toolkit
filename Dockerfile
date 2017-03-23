@@ -1,4 +1,4 @@
-FROM pachulo/xenial-virtualgl-nvidia
+FROM plumbee/nvidia-virtualgl
 
 LABEL version="1.0"
 
