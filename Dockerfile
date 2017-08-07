@@ -23,7 +23,7 @@ RUN apt-get update && \
         pkg-config libusb-1.0-0-dev cmake m4 automake autotools-dev \
         cmake libboost-all-dev libcppunit-dev swig doxygen liblog4cpp5-dev python-scipy gr-osmosdr wireshark && \
         apt-get clean && \
-        apt-get autoremove && \
+        apt-get autoremove -y && \
         rm -rf /var/lib/apt/lists/*
 
 # We don't install these packages from the repos: rtl-sdr, librtlsdr-dev
