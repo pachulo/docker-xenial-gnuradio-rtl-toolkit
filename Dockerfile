@@ -27,7 +27,7 @@ RUN apt-get update && \
         rm -rf /var/lib/apt/lists/*
 
 # We don't install these packages from the repos: rtl-sdr, librtlsdr-dev
-RUN git clone --depth 1 https://github.com/rtlsdrblog/rtl-sdr && \
+RUN git clone https://github.com/rtlsdrblog/rtl-sdr && \
         cd rtl-sdr && \
         mkdir build && \
         cd build && \
@@ -37,7 +37,7 @@ RUN git clone --depth 1 https://github.com/rtlsdrblog/rtl-sdr && \
         ldconfig
 
 # This seems to be the most up to date fork
-RUN git clone --depth 1 https://github.com/viraptor/kalibrate-rtl && \
+RUN git clone https://github.com/viraptor/kalibrate-rtl && \
         cd kalibrate-rtl && \
         ./bootstrap && CXXFLAGS='-W -Wall -O3' && \
         ./configure && \
