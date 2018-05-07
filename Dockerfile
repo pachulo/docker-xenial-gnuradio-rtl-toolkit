@@ -37,12 +37,12 @@ RUN git clone https://github.com/rtlsdrblog/rtl-sdr && \
         ldconfig
 
 # This seems to be the most up to date fork
-#RUN git clone https://github.com/viraptor/kalibrate-rtl && \
-    #        cd kalibrate-rtl && \
-    #    ./bootstrap && CXXFLAGS='-W -Wall -O3' && \
-    #    ./configure && \
-    #    make && \
-    #    make install
+RUN git clone https://github.com/viraptor/kalibrate-rtl && \
+        cd kalibrate-rtl && \
+        ./bootstrap && CXXFLAGS='-W -Wall -O3' && \
+        ./configure && \
+        make && \
+        make install
 
 # Some QT-based applications need this variable set
 RUN echo export QT_X11_NO_MITSHM=1 >> /etc/bash.bashrc
